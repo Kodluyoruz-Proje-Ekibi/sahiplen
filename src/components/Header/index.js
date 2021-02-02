@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Home from '../Home';
 import Shop from '../Shop';
+import Blog from '../Blog';
 
 function Header() {
 	return (
@@ -29,18 +30,19 @@ function Header() {
 								<Link to="/blog">Blog</Link>
 							</li>
 							<li>
-								<a href="#team" className="btn btn-warning" style={{ color: 'black' }}>
+								<Link to="/sahiplendir" className="btn btn-warning" style={{ color: 'black' }}>
 									Hayvan Sahiplendir!
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</nav>
 				</div>
 			</header>
 			<Route exact path="/" component={Home} />
-			<Route path="/tumhayvanlar" component={Home} />
+			{/* <Route path="/tumhayvanlar" component={tumhayvanlar} /> */}
 			<Route path="/shop" component={Shop} />
-			<Route path="/blog" component={Home} />
+			<Route path="/blog" component={Blog} />
+			{/* <Route path="/sahiplendir" component={Sahiplendir} /> */}
 		</Router>
 	);
 }
