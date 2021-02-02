@@ -165,6 +165,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
+	position: inherit;
 	background: #fff;
 	transition: all 0.5s;
 	z-index: 997;
