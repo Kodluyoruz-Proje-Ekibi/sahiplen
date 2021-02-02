@@ -1,11 +1,14 @@
 import React from 'react';
-import HomeGallery from '../HomeGallery';
-import Blog from '../Blog';
+import Header from './Header';
+import Slider from './Slider';
+import Footer from './Footer';
 export default function Home() {
 	return (
-		<div>
-			<HomeGallery />
-			<Blog />
-		</div>
+		<>
+			<Header />
+			<Slider />
+			<h1>İçerik alanı</h1>
+			<Footer />
+		</>
 	);
 }
