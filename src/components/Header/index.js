@@ -30,7 +30,7 @@ function Header() {
 							</li>
 							<li>
 								<a href="#team" className="btn btn-warning" style={{ color: 'black' }}>
-									Hayvan Sahiplendir
+									Hayvan Sahiplendir!
 								</a>
 							</li>
 						</ul>
