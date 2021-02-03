@@ -3,21 +3,6 @@ import React from 'react';
 function Footer() {
 	return (
 		<footer id="footer">
-			<div className="footer-newsletter">
-				<div className="container">
-					<div className="row justify-content-center">
-						<div className="col-lg-6">
-							<h4>Join Our Newsletter</h4>
-							<p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-							<form>
-								<input type="email" name="email" />
-								<input type="submit" value="Subscribe" />
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
 			<div className="footer-top">
 				<div className="container">
 					<div className="row">
@@ -114,7 +99,7 @@ function Footer() {
 					. All Rights Reserved
 				</div>
 				<div className="credits">
-					kodlayan <a href={() => {}}>Kodluyoruz Proje Ekibi</a>
+					Developed by <a href={() => {}}>Kodluyoruz Proje Ekibi | Grup 9</a>
 				</div>
 			</div>
 		</footer>
