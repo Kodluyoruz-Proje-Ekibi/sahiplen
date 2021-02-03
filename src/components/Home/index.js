@@ -5,6 +5,9 @@ function Home() {
 		<>
 			<Slider />
 			<h1>İçerik alanı</h1>
+
+			{/* News Letter Bölümü */}
+
 			<div id="footer">
 				<div className="footer-newsletter">
 					<div className="container">
@@ -21,6 +24,8 @@ function Home() {
 					</div>
 				</div>
 			</div>
+
+			{/* News Letter Bölümü */}
 		</>
 	);
 }

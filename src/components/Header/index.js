@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import Home from '../Home';
 import Shop from '../Shop';
 import Blog from '../Blog';
+import AddAnimalPage from '../AddAnimalPage';
 
 function Header() {
 	return (
@@ -17,7 +18,7 @@ function Header() {
 
 					<nav className="nav-menu d-none d-lg-block">
 						<ul>
-							<li className="active">
+							<li>
 								<Link to="/">Anasayfa</Link>
 							</li>
 							<li>
@@ -38,11 +39,13 @@ function Header() {
 					</nav>
 				</div>
 			</header>
-			<Route exact path="/" component={Home} />
-			{/* <Route path="/tumhayvanlar" component={tumhayvanlar} /> */}
-			<Route path="/shop" component={Shop} />
-			<Route path="/blog" component={Blog} />
-			{/* <Route path="/sahiplendir" component={Sahiplendir} /> */}
+			<Switch>
+				<Route path="/" exact component={Home} />
+				{/* <Route path="/tumhayvanlar" component={tumhayvanlar} /> */}
+				<Route path="/shop" component={Shop} />
+				<Route path="/blog" component={Blog} />
+				<Route path="/sahiplendir" component={AddAnimalPage} />
+			</Switch>
 		</Router>
 	);
 }

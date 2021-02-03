@@ -9,7 +9,7 @@ function Slider() {
 				</h1>
 				<h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
 				<div className="d-flex">
-					<a href="#about" className="btn-get-started scrollto">
+					<a href="/#" className="btn-get-started scrollto">
 						Tüm Hayvanlar
 					</a>
 				</div>
