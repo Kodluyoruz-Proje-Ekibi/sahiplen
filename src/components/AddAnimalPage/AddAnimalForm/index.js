@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import { useState } from 'react';
-=======
 import React from 'react';
->>>>>>> be1d5517290e895ce5f40c4a39ea6e4be23dd4e5
 import { useFormik } from 'formik';
 import validations from './validations';
 import { ilIlce } from '../../../assets/provinceDiscrict';
