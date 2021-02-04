@@ -9,17 +9,8 @@ function App() {
 		<>
 			<Header />
 			<div>
-				<Card image='birinci.PNG' title='Maltipoo'/>
-				<Card image='ikinci.PNG' title='Morkie' />
-	
-				<Card image='ücüncü.PNG'/>
-				<Card image='dördüncü.PNG' title='Golden'/>
+				<Card />
 				
-
-				
-
-				
-
 			</div>
 			
 			<Footer />
