@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFormik, setFieldValue } from 'formik';
+import { useFormik } from 'formik';
 import validations from './validations';
 import styles from './style.module.css';
 
