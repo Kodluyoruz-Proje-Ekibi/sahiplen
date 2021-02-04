@@ -1,23 +1,33 @@
-import React from 'react';
-import { useFormik, setFieldValue } from 'formik';
+import { useState } from 'react';
+import { useFormik } from 'formik';
 import validations from './validations';
+import { ilIlce } from '../../../assets/provinceDiscrict';
 import styles from './style.module.css';
 
 function AddAnimalForm() {
+	const [cityCode, setCityCode] = useState('');
+
 	const formik = useFormik({
 		initialValues: {
 			adTitle: '',
 			adDetail: '',
 			email: '',
+			sterilize: '',
+			kind: '',
+			gender: '',
+			age: '',
+			province: '',
+			district: '',
 		},
 		onSubmit: (values, bag) => {
 			setTimeout(() => {
 				bag.setSubmitting(false);
 			}, 2000);
-			console.log(values);
+			//console.log(values);
 		},
 		validationSchema: validations,
 	});
+
 	return (
 		<div className="container">
 			<form className={styles.form} onSubmit={formik.handleSubmit}>
@@ -37,7 +47,6 @@ function AddAnimalForm() {
 						<div className={styles.errorMessage}>{formik.errors.adTitle}</div>
 					)}
 				</div>
-
 				<div className={styles.formInput}>
 					<label htmlFor="adDetail">İlan Detayı:</label>
 					<textarea
@@ -56,22 +65,31 @@ function AddAnimalForm() {
 						<div className={styles.errorMessage}>{formik.errors.adDetail}</div>
 					)}
 				</div>
-
 				<div className="row formInput">
 					<div className="col form-group">
-						<label htmlFor="type">Hangi Pet?</label>
-						<input
+						<label htmlFor="kind">Hangi Pet?</label>
+						<select
 							className="form-control"
-							id="type"
-							name="type"
-							placeholder="Örneğin: Kedi"
-							value={formik.values.email}
+							id="kind"
+							name="kind"
+							value={formik.values.kind}
 							onChange={formik.handleChange}
 							onBlur={formik.handleBlur}
 							disabled={formik.isSubmitting}
-						/>
-						{formik.errors.email && formik.touched.email && (
-							<div className={styles.errorMessage}>{formik.errors.email}</div>
+						>
+							<option>---</option>
+							<option value="cat">Kedi</option>
+							<option value="dog">Köpek</option>
+							<option value="bird">Kuş</option>
+							<option value="fish">Balık</option>
+							<option value="rabbit">Tavşan</option>
+							<option value="turtle">Kaplumbağa</option>
+							<option value="hamster">Hamster</option>
+							<option value="reptile">Sürüngen</option>
+							<option value="other">Diğer</option>
+						</select>
+						{formik.errors.kind && formik.touched.kind && (
+							<div className={styles.errorMessage}>{formik.errors.kind}</div>
 						)}
 					</div>
 
@@ -81,90 +99,114 @@ function AddAnimalForm() {
 							className="form-control"
 							id="age"
 							name="age"
+							type="number"
 							placeholder="Örneğin: 5"
-							value={formik.values.email}
+							value={formik.values.age}
 							onChange={formik.handleChange}
 							onBlur={formik.handleBlur}
 							disabled={formik.isSubmitting}
 						/>
-						{formik.errors.email && formik.touched.email && (
-							<div className={styles.errorMessage}>{formik.errors.email}</div>
+						{formik.errors.age && formik.touched.age && (
+							<div className={styles.errorMessage}>{formik.errors.age}</div>
+						)}
+					</div>
+				</div>
+				<div className="row formInput">
+					<div className="col form-group">
+						<label htmlFor="gender">Cinsiyeti:</label>
+						<select
+							className="form-control"
+							id="gender"
+							name="gender"
+							value={formik.values.gender}
+							onChange={formik.handleChange}
+							onBlur={formik.handleBlur}
+							disabled={formik.isSubmitting}
+						>
+							<option>---</option>
+							<option value="female">Dişi</option>
+							<option value="male">Erkek</option>
+						</select>
+						{formik.errors.gender && formik.touched.gender && (
+							<div className={styles.errorMessage}>{formik.errors.gender}</div>
+						)}
+					</div>
+
+					<div className="col form-group">
+						<label htmlFor="sterilize">Kısırlaştırıldı mı?</label>
+						<select
+							className="form-control"
+							id="sterilize"
+							name="sterilize"
+							value={formik.values.isSterilized}
+							onChange={formik.handleChange}
+							onBlur={formik.handleBlur}
+							disabled={formik.isSubmitting}
+						>
+							<option>---</option>
+							<option value="sterilized">Evet</option>
+							<option value="nonSterilized">Hayır</option>
+						</select>
+						{formik.errors.sterilize && formik.touched.sterilize && (
+							<div className={styles.errorMessage}>{formik.errors.sterilize}</div>
 						)}
 					</div>
 				</div>
 
 				<div className="row formInput">
 					<div className="col form-group">
-						<label htmlFor="type">Cinsiyeti:</label>
-						<input
+						<label htmlFor="province">İl:</label>
+						<select
 							className="form-control"
-							id="type"
-							name="type"
-							placeholder="Örneğin: Kedi"
-							value={formik.values.email}
-							onChange={formik.handleChange}
+							id="province"
+							name="province"
+							value={formik.values.province}
+							onChange={(e) => {
+								formik.handleChange(e);
+								setCityCode(e.target.value);
+							}}
 							onBlur={formik.handleBlur}
 							disabled={formik.isSubmitting}
-						/>
-						{formik.errors.email && formik.touched.email && (
-							<div className={styles.errorMessage}>{formik.errors.email}</div>
+						>
+							<option hidden>---</option>
+							{ilIlce.map((item) => (
+								<option key={item.plaka} value={item.il}>
+									{item.il}
+								</option>
+							))}
+						</select>
+						{formik.errors.province && formik.touched.province && (
+							<div className={styles.errorMessage}>{formik.errors.province}</div>
 						)}
 					</div>
 
 					<div className="col form-group">
-						<label htmlFor="type">Kısırlaştırıldı mı?</label>
-						<input
+						<label htmlFor="district">İlçe:</label>
+						<select
 							className="form-control"
-							id="type"
-							name="type"
-							placeholder="Örneğin: Kedi"
-							value={formik.values.email}
+							id="district"
+							name="district"
+							value={formik.values.district}
 							onChange={formik.handleChange}
 							onBlur={formik.handleBlur}
 							disabled={formik.isSubmitting}
-						/>
-						{formik.errors.email && formik.touched.email && (
-							<div className={styles.errorMessage}>{formik.errors.email}</div>
+						>
+							<option hidden>---</option>
+							{ilIlce.map(
+								(item) =>
+									cityCode === item.il &&
+									item.ilceleri.map((ilce, i) => (
+										<option key={i} value={ilce}>
+											{ilce}
+										</option>
+									)),
+							)}
+						</select>
+						{formik.errors.district && formik.touched.district && (
+							<div className={styles.errorMessage}>{formik.errors.district}</div>
 						)}
 					</div>
 				</div>
-
-				<div className="row formInput">
-					<div className="col form-group">
-						<label htmlFor="type">İl:</label>
-						<input
-							className="form-control"
-							id="type"
-							name="type"
-							placeholder="Örneğin: Kedi"
-							value={formik.values.email}
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-							disabled={formik.isSubmitting}
-						/>
-						{formik.errors.email && formik.touched.email && (
-							<div className={styles.errorMessage}>{formik.errors.email}</div>
-						)}
-					</div>
-
-					<div className="col form-group">
-						<label htmlFor="type">İlçe:</label>
-						<input
-							className="form-control"
-							id="type"
-							name="type"
-							placeholder="Örneğin: Kedi"
-							value={formik.values.email}
-							onChange={formik.handleChange}
-							onBlur={formik.handleBlur}
-							disabled={formik.isSubmitting}
-						/>
-						{formik.errors.email && formik.touched.email && (
-							<div className={styles.errorMessage}>{formik.errors.email}</div>
-						)}
-					</div>
-				</div>
-
 				<div className="formInput">
 					<label htmlFor="email">E-Posta:</label>
 					<input
@@ -181,7 +223,6 @@ function AddAnimalForm() {
 						<div className={styles.errorMessage}>{formik.errors.email}</div>
 					)}
 				</div>
-
 				<div className="formInput">
 					<label htmlFor="image">Fotoğraflar:</label>
 					<input className="form-control" id="image" name="image" type="file" />
@@ -189,9 +230,16 @@ function AddAnimalForm() {
 						<div className={styles.errorMessage}>{formik.errors.image}</div>
 					)}
 				</div>
-
 				<button className={styles.adButton} type="submit" disabled={formik.isSubmitting}>
 					{formik.isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
+				</button>
+				<button
+					className={styles.resetButton}
+					type="button"
+					onClick={formik.handleReset}
+					disabled={!formik.dirty || formik.isSubmitting}
+				>
+					{formik.isSubmitting ? 'Temizleniyor...' : 'Temizle'}
 				</button>
 			</form>
 		</div>
