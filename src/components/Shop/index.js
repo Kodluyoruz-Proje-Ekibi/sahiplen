@@ -21,7 +21,7 @@ function Shop() {
 		<>
 			<div className="container">
 				<div className="row mb-5">
-					{mama.map((pet, key) => (
+					{mama.map((mama, key) => (
 						<div className="product-card mt-5">
 							<div className="badge">Yeni</div>
 							<div className="product-tumb">
@@ -30,7 +30,7 @@ function Shop() {
 							<div className="product-details">
 								<span className="product-catagory">Women,bag</span>
 								<h5>
-									<a href="/#">Women leather bag</a>
+									<a href="/#">{mama.name}</a>
 								</h5>
 								<div className="product-bottom-details">
 									<div className="product-price">$230.99</div>
