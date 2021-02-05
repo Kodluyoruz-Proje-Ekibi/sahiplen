@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SiDatadog } from 'react-icons/si';
 import kopek from './kopek.png';
 import './Card.css';
@@ -10,6 +10,9 @@ function Card() {
 		{ name: 'kedi4' },
 		{ name: 'kedi5' },
 	]);
+	useEffect(() => {
+		setPet([...pet, { name: 'kedi6' }]);
+	}, []);
 	return (
 		<>
 			<div className="container mt-4">
