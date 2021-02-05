@@ -11,7 +11,7 @@ function Card() {
 		{ name: 'kedi5' },
 	]);
 	useEffect(() => {
-		setPet([...pet, { name: 'kedi6' }]);
+		setPet((p) => [...p, { name: 'kedi6' }]);
 	}, []);
 	return (
 		<>
