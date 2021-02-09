@@ -19,7 +19,7 @@ function index() {
 								Evcil havyanınızın tüylerinde dolaşma sonucunda oluşan düğümleri açmak için kedinizi iyice fırçalayın. Bu işlemi normalde farklı olarak suda yaptığınızda, tüylerin suda büzülerek sıkışmasını hatta kedinizin canının yanmasını önleyecektir.
                             </p>
 					<p className="card-text"><small class="text-muted">08.02.21</small></p>
-					<a href="card1" class="btn btn-info">  Read More </a>
+					<a href="/#" class="btn btn-info">  Read More </a>
 				</div>
 			</div>
 
@@ -29,7 +29,7 @@ function index() {
 					<h5 className="card-title">Card title</h5>
 					<p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 					<p className="card-text"><small class="text-muted">08.02.21</small></p>
-					<a href="card2" class="btn btn-info">  Read More </a>
+					<a href="/#" class="btn btn-info">  Read More </a>
 					</div>
 				</div>
 
@@ -39,7 +39,7 @@ function index() {
 							<h5 className="card-title">Card title</h5>
 							<p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
 							<p className="card-text"><small class="text-muted">08.02.21</small></p>
-							<a href="card3" class="btn btn-info">  Read More </a>
+							<a href="/#" class="btn btn-info">  Read More </a>
 					        </div>		
 									
 				</div>
@@ -59,7 +59,7 @@ function index() {
                 <p className="card-text">
                     <small class="text-muted">05.02.21</small>
                     </p>
-					<a href="#" class="btn btn-info">  Read More </a>
+					<a href="/#" class="btn btn-info">  Read More </a>
                     
                 </div>
 				
@@ -76,7 +76,7 @@ function index() {
                 Kediniz birkaç tane kuru mama yedikten sonra ana yemekte yaş mama ile karıştırarak verebilirsiniz.
                 </p>
                 <p className="card-text"><small class="text-muted">5.02.21</small></p>
-				<a href="#" class="btn btn-info">  Read More </a>
+				<a href="/#" class="btn btn-info">  Read More </a>
             </div>
             <img className="card-img-bottom" src={kedi} alt=""/>
             </div>
@@ -88,7 +88,7 @@ function index() {
 					<h5 className="card-title">Card title</h5>
 					<p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					<p className="card-text"><small class="text-muted">08.02.21</small></p>
-					<a href="#" class="btn btn-info">  Read More </a>
+					<a href="/#" class="btn btn-info">  Read More </a>
 					
 					</div>
 				</div>
@@ -99,7 +99,7 @@ function index() {
 					<h5 className="card-title">Card title</h5>
 					<p className="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
 					<p className="card-text"><small class="text-muted">09.02.21</small></p>
-					<a href="#" class="btn btn-info"> Read More </a>
+					<a href="/#" class="btn btn-info"> Read More </a>
 					
 					</div>
 				</div>
@@ -110,7 +110,7 @@ function index() {
 							<h5 className="card-title">Card title</h5>
 							<p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
 							<p className="card-text"><small class="text-muted">09.02.21</small></p>
-							<a href="#" class="btn btn-info"> Read More </a>
+							<a href="/#" class="btn btn-info"> Read More </a>
 							
 					        </div>		
 									
