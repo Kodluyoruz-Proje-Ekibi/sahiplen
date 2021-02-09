@@ -1,12 +1,37 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import React from 'react';
 import { useFormik } from 'formik';
 import validations from './validations';
 import { ilIlce } from '../../../assets/provinceDiscrict';
+import { useDropzone } from 'react-dropzone';
+
 import styles from './style.module.css';
 
 function AddAnimalForm() {
 	const [cityCode, setCityCode] = useState('');
+
+	const [files, setFiles] = useState([]);
+
+	const { fileRejections, getRootProps, getInputProps } = useDropzone({
+		maxFiles: 5,
+		accept: 'image/*',
+		onDrop: (acceptedFiles) => {
+			setFiles(
+				acceptedFiles.map((file) =>
+					Object.assign(file, {
+						preview: URL.createObjectURL(file),
+					}),
+				),
+			);
+		},
+	});
+
+	useEffect(
+		() => () => {
+			files.forEach((file) => URL.revokeObjectURL(file.preview));
+		},
+		[files],
+	);
 
 	const formik = useFormik({
 		initialValues: {
@@ -24,7 +49,8 @@ function AddAnimalForm() {
 			setTimeout(() => {
 				bag.setSubmitting(false);
 			}, 2000);
-			//console.log(values);
+			console.log(values);
+			console.log(bag);
 		},
 		validationSchema: validations,
 	});
@@ -101,6 +127,7 @@ function AddAnimalForm() {
 							id="age"
 							name="age"
 							type="number"
+							min="0"
 							placeholder="Örneğin: 5"
 							value={formik.values.age}
 							onChange={formik.handleChange}
@@ -124,7 +151,7 @@ function AddAnimalForm() {
 							onBlur={formik.handleBlur}
 							disabled={formik.isSubmitting}
 						>
-							<option>---</option>
+							<option hidden>---</option>
 							<option value="female">Dişi</option>
 							<option value="male">Erkek</option>
 						</select>
@@ -144,7 +171,7 @@ function AddAnimalForm() {
 							onBlur={formik.handleBlur}
 							disabled={formik.isSubmitting}
 						>
-							<option>---</option>
+							<option hidden>---</option>
 							<option value="sterilized">Evet</option>
 							<option value="nonSterilized">Hayır</option>
 						</select>
@@ -208,7 +235,8 @@ function AddAnimalForm() {
 						)}
 					</div>
 				</div>
-				<div className="formInput">
+
+				<div className={styles.formInput}>
 					<label htmlFor="email">E-Posta:</label>
 					<input
 						className="form-control"
@@ -224,24 +252,51 @@ function AddAnimalForm() {
 						<div className={styles.errorMessage}>{formik.errors.email}</div>
 					)}
 				</div>
-				<div className="formInput">
-					<label htmlFor="image">Fotoğraflar:</label>
-					<input className="form-control" id="image" name="image" type="file" />
-					{formik.errors.image && formik.touched.image && (
-						<div className={styles.errorMessage}>{formik.errors.image}</div>
-					)}
+
+				<div className="form-group">
+					<label htmlFor="photos">Fotoğraflar:</label>
+					<div {...getRootProps({ className: styles.dropzone })}>
+						<input id="photos" name="photos" {...getInputProps()} />
+						<p>
+							Fotoğrafları sürükleyip bırakabilirsiniz. Ya da bu alana tıklayarak seçebilirsiniz.
+						</p>
+
+						<p>
+							(En Fazla <b>4</b> Fotoğraf)
+						</p>
+					</div>
+					{fileRejections.length > 5 ? (
+						<div className={styles.errorMessage}>Çok Fazla Fotoğraf Yüklemeye Çalıştınız.</div>
+					) : null}
+
+					<aside className={styles.thumbsContainer}>
+						{files.map((file) => (
+							<div className={styles.thumb} key={file.name}>
+								<div className={styles.thumbInner}>
+									<img alt="" src={file.preview} className={styles.img} />
+								</div>
+							</div>
+						))}
+					</aside>
 				</div>
-				<button className={styles.adButton} type="submit" disabled={formik.isSubmitting}>
-					{formik.isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
-				</button>
-				<button
-					className={styles.resetButton}
-					type="button"
-					onClick={formik.handleReset}
-					disabled={!formik.dirty || formik.isSubmitting}
-				>
-					{formik.isSubmitting ? 'Temizleniyor...' : 'Temizle'}
-				</button>
+
+				<div className="row">
+					<div className="col form-group">
+						<button className={styles.adButton} type="submit" disabled={formik.isSubmitting}>
+							{formik.isSubmitting ? 'Gönderiliyor...' : 'Gönder'}
+						</button>
+					</div>
+					<div style={{ textAlign: 'right' }} className="col form group">
+						<button
+							className={styles.resetButton}
+							type="reset"
+							onClick={formik.handleReset}
+							disabled={!formik.dirty || formik.isSubmitting}
+						>
+							Temizle
+						</button>
+					</div>
+				</div>
 			</form>
 		</div>
 	);
