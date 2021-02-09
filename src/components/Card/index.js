@@ -16,7 +16,7 @@ function Card() {
 	return (
 		<>
 			<div className="container mt-4">
-				<div class="row">
+				<div className="row">
 					{pet.map((pet, key) => (
 						<div key={key} className="card-container">
 							<div className="image-container">
@@ -45,7 +45,7 @@ function Card() {
 										fontWeight: 'bold',
 									}}
 								>
-									<h7>Profil</h7>
+									<h6>Profil</h6>
 								</a>
 							</div>
 						</div>
