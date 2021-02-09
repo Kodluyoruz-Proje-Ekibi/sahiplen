@@ -1,5 +1,7 @@
 label {
 	display: block !important;
+	font-weight: 600;
+	color: rgb(66, 66, 66);
 }
 
 .adButton {
@@ -10,6 +12,17 @@ label {
 	color: #fff;
 	transition: 0.4s;
 	border-radius: 4px;
+}
+
+.resetButton {
+	margin-top: 20px;
+	background: #ea102d;
+	border: 0;
+	padding: 10px 30px;
+	color: #fff;
+	transition: 0.4s;
+	border-radius: 4px;
+	margin-left: 50px;
 }
 
 .errorMessage {
