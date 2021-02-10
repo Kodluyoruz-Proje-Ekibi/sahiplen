@@ -5,7 +5,7 @@ import Shop from '../Shop';
 import Blog from '../Blog';
 import AddAnimalPage from '../AddAnimalPage';
 import CardPage from '../CardPage';
-import AnimalDetail from '../AnimalDetail';
+import AnimalDetailPage from '../AnimalDetailPage';
 
 function Header() {
 	return (
@@ -50,7 +50,7 @@ function Header() {
 				<Route path="/shop" component={Shop} />
 				<Route path="/blog" component={Blog} />
 				<Route path="/sahiplendir" component={AddAnimalPage} />
-				<Route path="/detay" component={AnimalDetail} />
+				<Route path="/detay" component={AnimalDetailPage} />
 			</Switch>
 		</Router>
 	);
