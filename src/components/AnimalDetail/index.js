@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './style.module.css';
 import person from './person1.jpg';
-
+import Gallery from './DetailGallery';
 
 function AnimalDetail() {
 	return (
 		<div className="container pt-5">
 			<div className="row">
 				<div className="col-lg-4">
-					
+					<Gallery />
 				</div>
 				<div className="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column">
 					<h6>İlan Başlığı</h6>
