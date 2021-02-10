@@ -7,8 +7,10 @@ function DetailUserCard() {
 			<div className="member-img">
 				<img src={person} className="img-fluid" alt="" />
 			</div>
-			<div className="member-info" style={{ textAlign: 'center' }}>
-				<h6>Ozan ORKUN</h6>
+			<div className="member-info pt-4" style={{ textAlign: 'center' }}>
+				<p>
+					<b>Ozan ORKUN</b>
+				</p>
 				<ul>
 					<li>0530 123 456</li>
 					<li>mail@mail.com</li>
