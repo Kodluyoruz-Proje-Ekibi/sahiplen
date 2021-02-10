@@ -4,7 +4,8 @@ import Home from '../Home';
 import Shop from '../Shop';
 import Blog from '../Blog';
 import AddAnimalPage from '../AddAnimalPage';
-import CardPage from '../CardPage'
+import CardPage from '../CardPage';
+import AnimalDetail from '../AnimalDetail';
 
 function Header() {
 	return (
@@ -36,16 +37,20 @@ function Header() {
 									Hayvan Sahiplendir!
 								</Link>
 							</li>
+							<li>
+								<Link to="/detay">Detay Demo</Link>
+							</li>
 						</ul>
 					</nav>
 				</div>
 			</header>
 			<Switch>
 				<Route path="/" exact component={Home} />
-			    <Route path="/tumhayvanlar" component={CardPage} />
+				<Route path="/tumhayvanlar" component={CardPage} />
 				<Route path="/shop" component={Shop} />
 				<Route path="/blog" component={Blog} />
 				<Route path="/sahiplendir" component={AddAnimalPage} />
+				<Route path="/detay" component={AnimalDetail} />
 			</Switch>
 		</Router>
 	);
