@@ -10,3 +10,21 @@
 .animalDescriptionList {
 	margin-top: -20px !important;
 }
+
+blockquote p:before {
+	font-family: Georgia, serif;
+	font-size: 3em;
+	line-height: 1;
+	top: 0;
+	left: 0;
+	content: '\201C';
+}
+
+blockquote p:after {
+	font-family: Georgia, serif;
+	font-size: 3em;
+	line-height: 1;
+	top: 0;
+	left: 0;
+	content: '\201D';
+}
