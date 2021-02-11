@@ -16,7 +16,7 @@ function CardPage() {
 	return (
 		<>
 			<div className="container mt-4">
-				<div className="row">
+				<div className="row" style={{ justifyContent: 'center' }}>
 					{pet.map((pet, key) => (
 						<div key={key} className="card-container">
 							<div className="image-container">
