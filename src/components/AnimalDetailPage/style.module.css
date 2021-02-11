@@ -4,6 +4,15 @@
 	overflow: hidden;
 	border-radius: 4px;
 	background: #fff;
+	
+}
+
+.card {
+	padding: 10px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	border-radius: 4px;
+	background: #fff;
 	box-shadow: 0px 2px 15px rgb(16 110 234 / 25%);
 }
 

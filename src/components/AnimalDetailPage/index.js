@@ -2,10 +2,11 @@ import React from 'react';
 import AnimalCard from './AnimalCard';
 import DetailDescription from './Description';
 import DetailUserCard from './UserCard';
+import styles from './style.module.css';
 
 function AnimalDetail() {
 	return (
-		<div className="container pt-5">
+		<div className={`container mt-5 pt-5 ${styles.card}`}>
 			<div className="row">
 				<div className="col-lg-4">
 					<AnimalCard />
