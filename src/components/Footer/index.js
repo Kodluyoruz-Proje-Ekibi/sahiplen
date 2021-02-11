@@ -1,6 +1,9 @@
+import SubscribeUs from '../SubscribeUs';
 function Footer() {
 	return (
 		<>
+			<SubscribeUs />
+
 			<footer id="footer">
 				<div className="footer-top">
 					<div className="container">
