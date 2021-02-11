@@ -5,9 +5,9 @@ function Slider() {
 		<section id="hero" className="d-flex align-items-center">
 			<div className="container" data-aos="zoom-out" data-aos-delay="100">
 				<h1>
-					Hoşgeldin Sende <span>Sahiplen.</span>
+					Hoşgeldin Sen de <span>Sahiplen.</span>
 				</h1>
-				<h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
+				<h2>Yuva arayan yüzlerce minik dost var. Vakit kaybetme.</h2>
 				<div className="d-flex">
 					<a href="/#" className="btn-get-started scrollto">
 						Tüm Hayvanlar

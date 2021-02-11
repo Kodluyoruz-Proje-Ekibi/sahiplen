@@ -21,7 +21,7 @@ function Header() {
 					<nav className="nav-menu d-none d-lg-block">
 						<ul>
 							<li>
-								<Link to="/">Anasayfa</Link>
+								<Link to="/">Ana Sayfa</Link>
 							</li>
 							<li>
 								<Link to="/tumhayvanlar">Tüm Hayvanlar</Link>

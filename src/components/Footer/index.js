@@ -1,5 +1,3 @@
-import React from 'react';
-
 function Footer() {
 	return (
 		<>
@@ -12,63 +10,63 @@ function Footer() {
 									Sahiplen<span>.</span>
 								</h3>
 								<p>
-									A108 Adam Street <br />
-									New York, NY 535022
+									Şahkulu, Şişhane Metro Durağı, Meşrutiyet Cd.
 									<br />
-									United States <br />
+									Beyoğlu No:125, 34421
 									<br />
-									<strong>Phone:</strong> +1 5589 55488 55
+									İstanbul <br />
 									<br />
-									<strong>Email:</strong> info@example.com
+									<strong>Tel:</strong> +90 212 123 45 67
+									<br />
+									<strong>E-Posta:</strong> info@kodluyoruz.org
 									<br />
 								</p>
 							</div>
 
 							<div className="col-lg-3 col-md-6 footer-links">
-								<h4>Useful Links</h4>
+								<h4>Faydalı Linkler</h4>
 								<ul>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Home</a>
+										<i className="bx bx-chevron-right"></i> <a href="/#">Sahiplendir</a>
 									</li>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">About us</a>
+										<i className="bx bx-chevron-right"></i> <a href="/#">Tüm Hayvanlar</a>
 									</li>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Services</a>
+										<i className="bx bx-chevron-right"></i> <a href="/#">Shop</a>
 									</li>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Terms of service</a>
+										<i className="bx bx-chevron-right"></i> <a href="/#">Blog</a>
 									</li>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Privacy policy</a>
+										<i className="bx bx-chevron-right"></i>{' '}
+										<a href="/#">Gizlilik Politikası ve KVKK</a>
 									</li>
 								</ul>
 							</div>
 
 							<div className="col-lg-3 col-md-6 footer-links">
-								<h4>Our Services</h4>
+								<h4>Hizmetlerimiz</h4>
 								<ul>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Web Design</a>
+										<i className="bx bx-chevron-right"></i> <a href="/#">Hayvan Sahiplendirme</a>
 									</li>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Web Development</a>
+										<i className="bx bx-chevron-right"></i> <a href="/#">PetShop</a>
 									</li>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Product Management</a>
+										<i className="bx bx-chevron-right"></i>{' '}
+										<a href="/#">Sosyal Sorumluluk Projeleri</a>
 									</li>
 									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Marketing</a>
-									</li>
-									<li>
-										<i className="bx bx-chevron-right"></i> <a href="/#">Graphic Design</a>
+										<i className="bx bx-chevron-right"></i> <a href="/#">Hayvan Bakım Rehberi</a>
 									</li>
 								</ul>
 							</div>
 
 							<div className="col-lg-3 col-md-6 footer-links">
-								<h4>Our Social Networks</h4>
-								<p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+								<h4>Sosyal Medya Hesaplarımız</h4>
+								<p>Bizi sosyal medya üzerinden takip edip, büyümemize destek olabilirsiniz.</p>
 								<div className="social-links mt-3">
 									<a href="/#" className="twitter">
 										<i className="bx bxl-twitter"></i>
@@ -97,10 +95,10 @@ function Footer() {
 						<strong>
 							<span>Sahiplen</span>
 						</strong>
-						. All Rights Reserved
+						. Tüm hakları mahfuzdur.
 					</div>
 					<div className="credits">
-						Developed by <a href="/#">Kodluyoruz Proje Ekibi | Grup 9</a>
+						Geliştiren <a href="/#">Kodluyoruz Proje Ekibi | Grup 9</a>
 					</div>
 				</div>
 			</footer>
