@@ -8,7 +8,7 @@ function index() {
 				<div className="card-deck">
 					<div className="card">
 						<img className="card-img-top" src={kedi} alt="" />
-						<div className="card-body">
+						<div className="card-body p-3">
 							<h5 className="card-title">Kedi Nasıl Yıkanır?</h5>
 							<p className="card-text">
 								Aslında kedilerin çoğu ıslanmaktan çok da hoşlanmazlar. Yıkama işlemini yaparken
@@ -29,7 +29,7 @@ function index() {
 
 					<div className="card">
 						<img className="card-img-top" src={kedi} alt="" />
-						<div className="card-body">
+						<div className="card-body p-3">
 							<h5 className="card-title">Card title</h5>
 							<p className="card-text">
 								This card has supporting text below as a natural lead-in to additional content.
@@ -45,7 +45,7 @@ function index() {
 
 					<div className="card">
 						<img className="card-img-top" src={kedi} alt="" />
-						<div className="card-body">
+						<div className="card-body p-3">
 							<h5 className="card-title">Card title</h5>
 							<p className="card-text">
 								This is a wider card with supporting text below as a natural lead-in to additional
@@ -62,9 +62,9 @@ function index() {
 					</div>
 				</div>
 				<div className="card-deck">
-					<div className="card mt-3 mb-3 col-5" style={{ width: '36rem' }}>
+					<div className="card mt-3 mb-3 p-3 col-5" style={{ width: '36rem' }}>
 						<img className="card-img-top" src={kedi} alt="" />
-						<div className="card-body">
+						<div className="card-body p-3">
 							<h5 className="card-title">Kedi maması nasıl verilir?</h5>
 							<p className="card-text">
 								Ayrıca, kedinizi kuru mamaya alıştırmak için biraz ılık su ile yumuşatabilirsiniz,
@@ -82,7 +82,7 @@ function index() {
 					</div>
 
 					<div className="card mt-3 mb-3 col-8" style={{ width: '36rem' }}>
-						<div className="card-body">
+						<div className="card-body p-3">
 							<h5 className="card-title">Kedi maması nasıl verilir?</h5>
 							<p className="card-text">
 								Ayrıca, kedinizi kuru mamaya alıştırmak için biraz ılık su ile yumuşatabilirsiniz,
@@ -103,7 +103,7 @@ function index() {
 				<div className="card-deck">
 					<div className="card">
 						<img className="card-img-top" src={kedi} alt="" />
-						<div className="card-body">
+						<div className="card-body p-3">
 							<h5 className="card-title">Card title</h5>
 							<p className="card-text">
 								This is a wider card with supporting text below as a natural lead-in to additional
@@ -120,7 +120,7 @@ function index() {
 
 					<div className="card">
 						<img className="card-img-top" src={kedi} alt="" />
-						<div className="card-body">
+						<div className="card-body p-3">
 							<h5 className="card-title">Card title</h5>
 							<p className="card-text">
 								This card has supporting text below as a natural lead-in to additional content.
@@ -136,7 +136,7 @@ function index() {
 
 					<div className="card">
 						<img className="card-img-top" src={kedi} alt="" />
-						<div className="card-body">
+						<div className="card-body p-3">
 							<h5 className="card-title">Card title</h5>
 							<p className="card-text">
 								This is a wider card with supporting text below as a natural lead-in to additional
