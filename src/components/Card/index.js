@@ -16,8 +16,7 @@ const GET_PETS = gql`
 function Card() {
 	const { loading, error, data } = useQuery(GET_PETS);
 	if (loading) return <p>Loading...</p>;
-	if (error) return <p>Error :(</p>;
-
+	if (error) return <p>Error :</p>;
 	return (
 		<>
 			<div className="container mt-4">
@@ -25,7 +24,7 @@ function Card() {
 					{data.pets.map(({ id, pet_images, title, description }) => (
 						<div key={id} className="card-container">
 							<div className="image-container">
-								<img src={pet_images} alt="" />
+								<img src={pet_images.split(',')[0]} alt="" />
 							</div>
 							<div className="card-content">
 								<div className="card-title">
