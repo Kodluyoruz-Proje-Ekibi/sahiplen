@@ -1,0 +1,15 @@
+.cardStyle {
+	box-shadow: 0px 0px 10px -5px;
+	transition: 0.3s;
+	animation: ease-in;
+    width: 800px;
+    margin: 0 auto;
+    
+}
+
+.card-title{
+    color: rgb(221, 185, 119);
+}
+
+
+
