@@ -4,13 +4,49 @@ import { useFormik } from 'formik';
 import validations from './validations';
 import { ilIlce } from '../../../assets/provinceDiscrict';
 import { useDropzone } from 'react-dropzone';
-
 import styles from './style.module.css';
+import { gql, useMutation } from '@apollo/client';
+
+const ADD_PET = gql`
+	mutation MyMutation(
+		$description: String = ""
+		$district: String = ""
+		$email: String = ""
+		$name: String = ""
+		$neutered: Boolean = false
+		$pet_age: smallint = 1
+		$pet_gender: String = ""
+		$pet_images: String = ""
+		$pet_type: String = ""
+		$phone: String = ""
+		$provice: String = ""
+		$title: String = ""
+	) {
+		insert_pets_one(
+			object: {
+				description: $description
+				district: $district
+				email: $email
+				name: $name
+				neutered: $neutered
+				pet_age: $pet_age
+				pet_gender: $pet_gender
+				pet_images: $pet_images
+				pet_type: $pet_type
+				phone: $phone
+				provice: $provice
+				title: $title
+			}
+		) {
+			id
+		}
+	}
+`;
 
 function AddAnimalForm() {
 	const [cityCode, setCityCode] = useState('');
-
 	const [files, setFiles] = useState([]);
+	const [addTodo, { data }] = useMutation(ADD_PET);
 
 	const { fileRejections, getRootProps, getInputProps } = useDropzone({
 		maxFiles: 5,
@@ -41,7 +77,7 @@ function AddAnimalForm() {
 			sterilize: '',
 			kind: '',
 			gender: '',
-			age: '',
+			age: 0,
 			province: '',
 			district: '',
 		},
@@ -50,6 +86,23 @@ function AddAnimalForm() {
 				bag.setSubmitting(false);
 			}, 2000);
 			console.log(values);
+			addTodo({
+				variables: {
+					title: values.adTitle,
+					description: values.adDetail,
+					pet_type: values.kind,
+					pet_age: values.age,
+					pet_gender: values.gender,
+					neutered: false,
+					provice: values.province,
+					district: values.district,
+					email: values.email,
+					name: 'İsmail Oğuzhan Duran',
+					phone: '054222',
+					pet_images:
+						'https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg,https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg',
+				},
+			});
 			console.log(bag);
 		},
 		validationSchema: validations,
