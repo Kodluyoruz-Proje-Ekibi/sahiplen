@@ -1,38 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { SiDatadog } from 'react-icons/si';
-import kopek from './kopek.png';
+import React from 'react';
 import './Card.css';
+import { useQuery, gql } from '@apollo/client';
+
+const GET_PETS = gql`
+	query GetPets {
+		pets {
+			id
+			pet_images
+			title
+			description
+		}
+	}
+`;
+
 function Card() {
-	const [pet, setPet] = useState([
-		{ name: 'kedi1' },
-		{ name: 'kedi2' },
-		{ name: 'kedi3' },
-		{ name: 'kedi4' },
-		{ name: 'kedi5' },
-	]);
-	useEffect(() => {
-		setPet((p) => [...p, { name: 'kedi6' }]);
-	}, []);
+	const { loading, error, data } = useQuery(GET_PETS);
+	if (loading) return <p>Loading...</p>;
+	if (error) return <p>Error :(</p>;
+
 	return (
 		<>
 			<div className="container mt-4">
 				<div className="row" style={{ justifyContent: 'center' }}>
-					{pet.map((pet, key) => (
-						<div key={key} className="card-container">
+					{data.pets.map(({ id, pet_images, title, description }) => (
+						<div key={id} className="card-container">
 							<div className="image-container">
-								<img src={kopek} alt="" />
+								<img src={pet_images} alt="" />
 							</div>
 							<div className="card-content">
 								<div className="card-title">
-									<h3>
-										{pet.name} <SiDatadog />
-									</h3>
+									<h3>{title}</h3>
 								</div>
 								<div className="card-body">
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-										incididunt.
-									</p>
+									<p>{description.substring(0, 100)}...</p>
 								</div>
 							</div>
 							<div className="btn" style={{ display: 'flex' }}>
