@@ -39,9 +39,6 @@ function Header() {
 								</Link>
 							</li>
 							<li>
-								<Link to="/detay">Detay Demo</Link>
-							</li>
-							<li>
 								<Link to="/blogdetay">Blog Demo</Link>
 							</li>
 						</ul>

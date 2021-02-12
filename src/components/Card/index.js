@@ -16,7 +16,7 @@ const GET_PETS = gql`
 function Card() {
 	const { loading, error, data } = useQuery(GET_PETS);
 	if (loading) return <p>Loading...</p>;
-	if (error) return <p>Error :</p>;
+	if (error) return <p>Error :(</p>;
 	return (
 		<>
 			<div className="container mt-4">
