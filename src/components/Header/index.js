@@ -6,6 +6,7 @@ import Blog from '../Blog';
 import AddAnimalPage from '../AddAnimalPage';
 import Card from '../Card';
 import AnimalDetailPage from '../AnimalDetailPage';
+import BlogDetail from '../BlogDetail';
 
 function Header() {
 	return (
@@ -48,6 +49,7 @@ function Header() {
 				<Route path="/blog" component={Blog} />
 				<Route path="/sahiplendir" component={AddAnimalPage} />
 				<Route path="/detay" component={AnimalDetailPage} />
+				<Route path="/blogdetay" component={BlogDetail} />
 			</Switch>
 		</Router>
 	);
