@@ -4,7 +4,7 @@ import './Card.css';
 
 const GET_PETS = gql`
 	query GetPets {
-		pets {
+		pets(order_by: { created_at: desc }) {
 			id
 			pet_images
 			title

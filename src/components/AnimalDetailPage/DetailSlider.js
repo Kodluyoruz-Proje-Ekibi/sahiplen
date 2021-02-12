@@ -3,12 +3,15 @@ import { Carousel } from 'react-responsive-carousel';
 import React from 'react';
 
 function DetailSlider({ pet_images }) {
+	let petsImages = pet_images.split(',');
 	return (
 		<>
 			<Carousel statusFormatter={() => null}>
-				<div>
-					<img src={pet_images} alt="" />
-				</div>
+				{petsImages.map((image, key) => (
+					<div key={key}>
+						<img src={image} alt="" />
+					</div>
+				))}
 			</Carousel>
 		</>
 	);

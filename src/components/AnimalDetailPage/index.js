@@ -22,6 +22,9 @@ query GetPets {
     pet_age
     provice
     district
+		name
+		email
+		phone
   }
 }
 `;
@@ -46,6 +49,9 @@ function AnimalDetail() {
 					provice,
 					district,
 					pet_images,
+					name,
+					email,
+					phone,
 				}) => (
 					<div key={id} className={`container mt-5 pt-5 ${styles.card}`}>
 						<div className="row">
@@ -60,11 +66,11 @@ function AnimalDetail() {
 									pet_images={pet_images}
 								/>
 							</div>
-							<div className="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column">
+							<div className="col-lg-5 pt-4 pt-lg-0 content d-flex flex-column">
 								<DetailDescription title={title} description={description} />
 							</div>
-							<div className="col-lg-2 align-items-stretch text-align-center">
-								<DetailUserCard />
+							<div className="col-lg-3 align-items-stretch text-align-center">
+								<DetailUserCard name={name} email={email} phone={phone} />
 							</div>
 						</div>
 					</div>

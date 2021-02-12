@@ -1,7 +1,7 @@
 import styles from './style.module.css';
 import person from './person1.jpg';
 
-function DetailUserCard() {
+function DetailUserCard({ name, email, phone }) {
 	return (
 		<div className={styles.member}>
 			<div className="member-img">
@@ -9,11 +9,11 @@ function DetailUserCard() {
 			</div>
 			<div className="member-info pt-4" style={{ textAlign: 'center' }}>
 				<p>
-					<b>Ozan ORKUN</b>
+					<b>{name}</b>
 				</p>
 				<ul>
-					<li>0530 123 456</li>
-					<li>mail@mail.com</li>
+					<li>{phone}</li>
+					<li>{email}</li>
 				</ul>
 			</div>
 		</div>
