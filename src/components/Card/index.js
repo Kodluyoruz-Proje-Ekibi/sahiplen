@@ -36,7 +36,7 @@ function Card() {
 							</div>
 							<div className="btn" style={{ display: 'flex' }}>
 								<a
-									href="/#"
+									href={`/detay?id=${id}`}
 									style={{
 										textTransform: 'uppercase',
 										color: 'cadetblue',
@@ -44,9 +44,7 @@ function Card() {
 										fontWeight: 'bold',
 									}}
 								>
-									<h6>
-										<a href={`/detay?id=${id}`}>Profil</a>
-									</h6>
+									<h6>Profil</h6>
 								</a>
 							</div>
 						</div>

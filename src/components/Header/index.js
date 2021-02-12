@@ -38,9 +38,6 @@ function Header() {
 									Hayvan Sahiplendir!
 								</NavLink>
 							</li>
-							<li>
-								<NavLink to="/blogdetay">Blog Demo</NavLink>
-							</li>
 						</ul>
 					</nav>
 				</div>
@@ -52,7 +49,6 @@ function Header() {
 				<Route path="/blog" component={Blog} />
 				<Route path="/sahiplendir" component={AddAnimalPage} />
 				<Route path="/detay" component={AnimalDetailPage} />
-				<Route path="/blogdetay" component={BlogDetail} />
 			</Switch>
 		</Router>
 	);

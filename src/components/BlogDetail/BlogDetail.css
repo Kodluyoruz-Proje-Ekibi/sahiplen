@@ -2,14 +2,10 @@
 	box-shadow: 0px 0px 10px -5px;
 	transition: 0.3s;
 	animation: ease-in;
-    width: 800px;
-    margin: 0 auto;
-    
+	margin: 0 auto;
 }
 
-.blog-title{
-    color: rgb(221, 185, 119);
+.blog-title {
+	font-size: 30px;
+	color: rgb(221, 185, 119);
 }
-
-
-

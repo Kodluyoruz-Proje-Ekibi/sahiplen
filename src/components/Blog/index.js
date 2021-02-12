@@ -22,9 +22,9 @@ function Blog() {
 	return (
 		<div className="container mt-5">
 			<div className="row">
-				<div className="card-deck">
-					{data.blog.map(({ id, images, title, description, created_at }) => (
-						<div key={id} className="card cardStyle mb-5 col-md-4">
+				{data.blog.map(({ id, images, title, description, created_at }) => (
+					<div key={id} className="col-md-4">
+						<div className="card cardStyle mb-5">
 							<img className="card-img-top" src={images} alt="" />
 							<div className="card-body p-3">
 								<h5 className="card-title">{title}</h5>
@@ -37,8 +37,8 @@ function Blog() {
 								</a>
 							</div>
 						</div>
-					))}
-				</div>
+					</div>
+				))}
 			</div>
 		</div>
 	);
