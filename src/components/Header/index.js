@@ -4,7 +4,7 @@ import Home from '../Home';
 import Shop from '../Shop';
 import Blog from '../Blog';
 import AddAnimalPage from '../AddAnimalPage';
-import CardPage from '../CardPage';
+import Card from '../Card';
 import AnimalDetailPage from '../AnimalDetailPage';
 
 function Header() {
@@ -46,7 +46,7 @@ function Header() {
 			</header>
 			<Switch>
 				<Route path="/" exact component={Home} />
-				<Route path="/tumhayvanlar" component={CardPage} />
+				<Route path="/tumhayvanlar" component={Card} />
 				<Route path="/shop" component={Shop} />
 				<Route path="/blog" component={Blog} />
 				<Route path="/sahiplendir" component={AddAnimalPage} />
