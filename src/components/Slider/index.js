@@ -9,7 +9,7 @@ function Slider() {
 				</h1>
 				<h2>Yuva arayan yüzlerce minik dost var. Vakit kaybetme.</h2>
 				<div className="d-flex">
-					<a href="/#" className="btn-get-started scrollto">
+					<a href="/tumhayvanlar" className="btn-get-started scrollto">
 						Tüm Hayvanlar
 					</a>
 				</div>
