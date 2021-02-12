@@ -8,7 +8,6 @@ function App() {
 	return (
 		<>
 			<Header />
-			{/*<İmageSlider slides={SliderData}/>*/}
 			<Footer />
 		</>
 	);
