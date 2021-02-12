@@ -1,6 +1,5 @@
 import React from 'react';
 import './BlogDetail.css';
-import image1 from './image1.PNG';
 import { useQuery, gql } from '@apollo/client';
 
 const queryString = window.location.search;

@@ -6,7 +6,6 @@ import Blog from '../Blog';
 import AddAnimalPage from '../AddAnimalPage';
 import Card from '../Card';
 import AnimalDetailPage from '../AnimalDetailPage';
-import BlogDetail from '../BlogDetail';
 
 function Header() {
 	return (
