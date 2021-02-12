@@ -1,6 +1,6 @@
 import React from 'react';
-import './Card.css';
 import { useQuery, gql } from '@apollo/client';
+import './Card.css';
 
 const GET_PETS = gql`
 	query GetPets {
@@ -45,7 +45,9 @@ function Card() {
 										fontWeight: 'bold',
 									}}
 								>
-									<h6>Profil</h6>
+									<h6>
+										<a href={`/detay?id=${id}`}>Profil</a>
+									</h6>
 								</a>
 							</div>
 						</div>
