@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import Home from '../Home';
 import Shop from '../Shop';
 import Blog from '../Blog';
@@ -14,32 +14,32 @@ function Header() {
 			<header id="header" className="fixed-top">
 				<div className="container d-flex align-items-center">
 					<h1 className="logo mr-auto">
-						<Link to="/">
+						<NavLink to="/">
 							Sahiplen<span>.</span>
-						</Link>
+						</NavLink>
 					</h1>
 
 					<nav className="nav-menu d-none d-lg-block">
 						<ul>
 							<li>
-								<Link to="/">Ana Sayfa</Link>
+								<NavLink to="/">Ana Sayfa</NavLink>
 							</li>
 							<li>
-								<Link to="/tumhayvanlar">Tüm Hayvanlar</Link>
+								<NavLink to="/tumhayvanlar">Tüm Hayvanlar</NavLink>
 							</li>
 							<li>
-								<Link to="/shop">Shop</Link>
+								<NavLink to="/shop">Shop</NavLink>
 							</li>
 							<li>
-								<Link to="/blog">Blog</Link>
+								<NavLink to="/blog">Blog</NavLink>
 							</li>
 							<li>
-								<Link to="/sahiplendir" className="btn btn-warning" style={{ color: 'black' }}>
+								<NavLink to="/sahiplendir" className="btn btn-warning" style={{ color: 'black' }}>
 									Hayvan Sahiplendir!
-								</Link>
+								</NavLink>
 							</li>
 							<li>
-								<Link to="/blogdetay">Blog Demo</Link>
+								<NavLink to="/blogdetay">Blog Demo</NavLink>
 							</li>
 						</ul>
 					</nav>
