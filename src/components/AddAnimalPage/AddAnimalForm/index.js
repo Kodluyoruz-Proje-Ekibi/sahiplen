@@ -101,8 +101,8 @@ function AddAnimalForm() {
 					email: values.email,
 					name: values.name,
 					phone: values.phone,
-					pet_images:
-						'https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg,https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg',
+					// pet_images:
+					// 	'https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg,https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg',
 				},
 			});
 		},

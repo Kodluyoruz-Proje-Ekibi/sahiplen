@@ -27,10 +27,8 @@
 	margin-left: 1rem;
 	padding: 0rem;
 }
-.card-body {
-	margin-bottom: 0px;
-	margin-top: 0px;
-	padding: 0rem;
+.card-bodys {
+	height: 125px;
 }
 
 .card-title {

@@ -28,9 +28,9 @@ function Card() {
 							</div>
 							<div className="card-content">
 								<div className="card-title">
-									<h3>{title}</h3>
+									<h6>{title}</h6>
 								</div>
-								<div className="card-body">
+								<div className="card-bodys">
 									<p>{description.substring(0, 100)}...</p>
 								</div>
 							</div>
