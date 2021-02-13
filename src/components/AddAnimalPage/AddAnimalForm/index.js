@@ -46,7 +46,7 @@ const ADD_PET = gql`
 function AddAnimalForm() {
 	const [cityCode, setCityCode] = useState('');
 	const [files, setFiles] = useState([]);
-	const [addTodo, { data }] = useMutation(ADD_PET);
+	const [addTodo] = useMutation(ADD_PET);
 
 	const { fileRejections, getRootProps, getInputProps } = useDropzone({
 		maxFiles: 5,
@@ -80,12 +80,14 @@ function AddAnimalForm() {
 			age: 0,
 			province: '',
 			district: '',
+			name: '',
+			phone: '',
 		},
 		onSubmit: (values, bag) => {
 			setTimeout(() => {
 				bag.setSubmitting(false);
 			}, 2000);
-			console.log(values);
+
 			addTodo({
 				variables: {
 					title: values.adTitle,
@@ -97,13 +99,12 @@ function AddAnimalForm() {
 					provice: values.province,
 					district: values.district,
 					email: values.email,
-					name: 'İsmail Oğuzhan Duran',
-					phone: '054222',
+					name: values.name,
+					phone: values.phone,
 					pet_images:
 						'https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg,https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-800x825.jpg',
 				},
 			});
-			console.log(bag);
 		},
 		validationSchema: validations,
 	});
@@ -305,7 +306,38 @@ function AddAnimalForm() {
 						<div className={styles.errorMessage}>{formik.errors.email}</div>
 					)}
 				</div>
-
+				<div className={styles.formInput}>
+					<label htmlFor="adTitle">Adınız :</label>
+					<input
+						className="form-control"
+						id="name"
+						name="name"
+						placeholder="Tam Adınız..."
+						value={formik.values.name}
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						disabled={formik.isSubmitting}
+					/>
+					{formik.errors.name && formik.touched.name && (
+						<div className={styles.errorMessage}>{formik.errors.name}</div>
+					)}
+				</div>
+				<div className={styles.formInput}>
+					<label htmlFor="adTitle">Telefon Numarası :</label>
+					<input
+						className="form-control"
+						id="phone"
+						name="phone"
+						placeholder="Telefon Numaranız..."
+						value={formik.values.phone}
+						onChange={formik.handleChange}
+						onBlur={formik.handleBlur}
+						disabled={formik.isSubmitting}
+					/>
+					{formik.errors.phone && formik.touched.phone && (
+						<div className={styles.errorMessage}>{formik.errors.phone}</div>
+					)}
+				</div>
 				<div className="form-group">
 					<label htmlFor="photos">Fotoğraflar:</label>
 					<div {...getRootProps({ className: styles.dropzone })}>
