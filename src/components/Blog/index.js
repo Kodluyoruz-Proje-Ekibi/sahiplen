@@ -1,5 +1,6 @@
 import { useQuery, gql } from '@apollo/client';
 import './style.css';
+import loadingGif from '../../img/loading.gif';
 
 const GET_BLOG = gql`
 	query GetBlog {
@@ -16,7 +17,12 @@ const GET_BLOG = gql`
 
 function Blog() {
 	const { loading, error, data } = useQuery(GET_BLOG);
-	if (loading) return <p>Loading...</p>;
+	if (loading)
+		return (
+			<p>
+				<img src={loadingGif} className="gif-loading" alt="" />
+			</p>
+		);
 	if (error) return <p>Error :(</p>;
 
 	return (

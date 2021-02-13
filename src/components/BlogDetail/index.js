@@ -1,6 +1,7 @@
 import React from 'react';
 import './BlogDetail.css';
 import { useQuery, gql } from '@apollo/client';
+import loadingGif from '../../img/loading.gif';
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -21,7 +22,12 @@ const GET_ID_BLOG = gql`
 
 function BlogDetail() {
 	const { loading, error, data } = useQuery(GET_ID_BLOG);
-	if (loading) return <p>Loading...</p>;
+	if (loading)
+		return (
+			<p>
+				<img src={loadingGif} className="gif-loading" alt="" />
+			</p>
+		);
 	if (error) return <p>Error :(</p>;
 	console.log(data);
 	return (

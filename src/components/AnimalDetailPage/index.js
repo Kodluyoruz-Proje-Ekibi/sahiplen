@@ -4,6 +4,7 @@ import DetailDescription from './Description';
 import DetailUserCard from './UserCard';
 import styles from './style.module.css';
 import { useQuery, gql } from '@apollo/client';
+import loadingGif from '../../img/loading.gif';
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -31,7 +32,12 @@ query GetPets {
 
 function AnimalDetail() {
 	const { loading, error, data } = useQuery(GET_ID_PET);
-	if (loading) return <p>Loading...</p>;
+	if (loading)
+		return (
+			<p>
+				<img src={loadingGif} className="gif-loading" alt="" />
+			</p>
+		);
 	if (error) return <p>Error :(</p>;
 
 	return (

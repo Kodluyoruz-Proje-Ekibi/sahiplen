@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import './Card.css';
+import loadingGif from '../../img/loading.gif';
 
 const GET_PETS = gql`
 	query GetPets {
@@ -15,7 +16,12 @@ const GET_PETS = gql`
 
 function Card() {
 	const { loading, error, data } = useQuery(GET_PETS);
-	if (loading) return <p>Loading...</p>;
+	if (loading)
+		return (
+			<p>
+				<img src={loadingGif} className="gif-loading" alt="" />
+			</p>
+		);
 	if (error) return <p>Error :(</p>;
 	return (
 		<>
