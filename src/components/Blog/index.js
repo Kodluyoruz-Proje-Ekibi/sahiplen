@@ -32,13 +32,13 @@ function Blog() {
 					<div key={id} className="col-md-4">
 						<div className="card cardStyle mb-5">
 							<img className="card-img-top" src={images} alt="" />
-							<div className="card-body p-3">
+							<div className="card-body p-3" style={{ height: '360px' }}>
 								<h5 className="card-title">{title}</h5>
 								<p className="card-text">{description.substring(0, 300)}</p>
 								<p className="card-text">
 									<small className="text-muted">{created_at}</small>
 								</p>
-								<a href={`/blogdetay?id=${id}`} className="btn btn-info">
+								<a href={`/blogdetay?id=${id}`} className="btn btn-info button-style">
 									Devamı...
 								</a>
 							</div>

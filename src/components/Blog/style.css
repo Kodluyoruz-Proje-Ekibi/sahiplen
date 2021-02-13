@@ -3,3 +3,8 @@
 	transition: 0.3s;
 	animation: ease-in;
 }
+.button-style {
+	position: absolute;
+	bottom: 10px;
+	width: 90%;
+}
